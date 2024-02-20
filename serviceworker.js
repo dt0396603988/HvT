@@ -5,7 +5,6 @@ const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
   'index.html'
 ];
-window.V2 = self;
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', event => {
