@@ -13,7 +13,7 @@
     {
       if ('serviceWorker' in navigator) {
    navigator.serviceWorker.register("serviceworker.js");
-        document.body.innerHTML= new Date()
+        document.body.innerHTML= '<a href="?id='+new Date()+'">'+new Date()+'</a>';
       } else {
         document.body.innerHTML="errker"
       }
