@@ -8,7 +8,7 @@
     <title>Service Worker App</title> 
   <script>
 
-    window.onload
+    window.onload = function()
     {
       if ('serviceWorker' in navigator) {
    navigator.serviceWorker.register("serviceworker.js");
