@@ -4,27 +4,24 @@
   
 <head> 
     <meta charset="UTF-8" /> 
-    <meta name="viewport" 
-          content="width=device-width, initial-scale=1.0" /> 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
-    <link rel="stylesheet" href="./style.css" /> 
+       
     <title>Service Worker App</title> 
+  <script>
+
+    window.onload
+    {
+      if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register("serviceworker.js");
+        document.body.innerHTML="serviceworker"
+      } else {
+        document.body.innerHTML="errker"
+      }
+    }
+  </script>
 </head> 
   
 <body> 
-    <!-- Button causing page reload -->
-    <div class="wrapper"> 
-        <!-- GfG logo -->
-        <img src= 
-"
-https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-6.png
-" 
-             alt="GfG logo" /> 
-        <button type="button" 
-                onClick="window.location.reload();"> 
-            Refresh Page 
-        </button> 
-    </div> 
+    rgfygy
 </body> 
   
 </html> 
