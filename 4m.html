@@ -10,19 +10,18 @@
   <script>
 
     window.onload = function()
-    {
-      if ('serviceWorker' in navigator) {
-    if (navigator.onLine) {
-   navigator.serviceWorker.register("serviceworker.js");
-        document.body.innerHTML= '<a href="?id='+new Date()+'">on'+new Date()+'</a>';
-    } else {
-      document.body.innerHTML= '<a href="?id='+new Date()+'">off'+new Date()+'</a>';
-      } 
-      }
-      else {
-        document.body.innerHTML="errker"
-      }
-    }
+{
+	if ('serviceWorker' in navigator) {
+	    if (navigator.onLine) {
+			navigator.serviceWorker.register("serviceworker.js");
+			document.body.innerHTML= '<a href="?id='+new Date()+'">on'+new Date()+'</a>';
+		} else {
+			document.body.innerHTML= '<a href="?id='+new Date()+'">off'+new Date()+'</a>';
+		}
+	} else {
+		document.body.innerHTML="errker"
+	}
+}
   </script>
 </head> 
   
