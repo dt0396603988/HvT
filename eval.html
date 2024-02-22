@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" manifest="halma.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no">
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 32px;
+}
+body {
+	margin: 30px 30px 0 30px;
+    overscroll-behavior: contain;
+}
+textarea:focus { 
+    outline: none !important;
+ }
+</style>
+<script>
+function $(idName_str)
+{
+	return document.getElementById(idName_str)
+}
+window.onload = function()
+{
+	var css_str = localStorage.getItem("css");
+	var js_str = localStorage.getItem("js");
+	var html_str = localStorage.getItem("html");
+	if(css_str && css_str != '')
+	{
+		var css_obj = document.createElement('style');
+		css_obj.setAttribute('type', 'text/css');
+		css_obj.appendChild(document.createTextNode(css_str));
+		document.head.appendChild(css_obj);
+		$('css_TxId').value = css_str;
+	}
+	if(html_str && html_str != '')
+	{
+		$('html_DivId').innerHTML = html_str;
+		$('html_TxId').value = html_str;
+	}
+	if(js_str && js_str != '')
+	{
+		var js_obj = document.createElement('script');
+		js_obj.setAttribute('type', 'text/javascript');
+		js_obj.appendChild(document.createTextNode(js_str));
+		document.head.appendChild(js_obj);
+		$('js_TxId').value = js_str;
+	}
+}
+
+</script>
+<title>H&T</title>
+</head>
+<body>
+	<div id="html_DivId" style="margin-bottom: 30px">H8TML</div>
+	
+	<div style="background-color: #fff; border: 1px solid #111; height: 100px; margin-bottom: 30px">
+		<input style="width: 100%; height: 100px" type="button" value="Clear" onmouseup="localStorage.clear(); location.reload();" />
+	</div>
+	
+	<div style="background-color: #fff; padding: 30px; border: 1px solid #112; height: 600px">
+		<textarea id="css_TxId" style="width: 100%; height: 100%; background-color: #fff; font-size: 12px"></textarea>
+	</div>
+	<div style="background-color: #fff; border: 1px solid #111; border-top: none; height: 100px; margin-bottom: 30px">
+		<input style="width: 100%; height: 100px" type="button" value="css" onmouseup="localStorage.setItem('css', $('css_TxId').value); this.style.backgroundColor='#ddd'" />
+	</div>
+	
+	<div style="background-color: #fff; padding: 30px; border: 1px solid #112; height: 600px">
+		<textarea id="js_TxId" style="width: 100%; height: 100%; background-color: #fff; font-size: 12px"></textarea>
+	</div>
+	<div style="background-color: #fff; border: 1px solid #111; border-top: none; height: 100px; margin-bottom: 30px">
+		<input style="width: 100%; height: 100px" type="button" value="js" onmouseup="localStorage.setItem('js', $('js_TxId').value); this.style.backgroundColor='#ddd'" />
+	</div>
+	
+	<div style="background-color: #fff; padding: 30px; border: 1px solid #112; height: 600px">
+		<textarea id="html_TxId" style="width: 100%; height: 100%; background-color: #fff; font-size: 12px"></textarea>
+	</div>
+	<div style="background-color: #fff; border: 1px solid #111; border-top: none; height: 100px; margin-bottom: 30px">
+		<input style="width: 100%; height: 100px" type="button" value="html" onmouseup="localStorage.setItem('html', $('html_TxId').value); this.style.backgroundColor='#ddd'" />
+	</div>
+	
+</body>
+</html>
