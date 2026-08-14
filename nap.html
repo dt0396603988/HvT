@@ -30,10 +30,10 @@ window.onload = function()
 	var html_str = localStorage.getItem("html");
 	if(css_str && css_str != '')
 	{
-		var css_obj = document.createElement('style');
+		/*var css_obj = document.createElement('style');
 		css_obj.setAttribute('type', 'text/css');
 		css_obj.appendChild(document.createTextNode(css_str));
-		document.head.appendChild(css_obj);
+		document.head.appendChild(css_obj);*/
 		$('css_TxId').value = css_str;
 	}
 	if(html_str && html_str != '')
@@ -42,10 +42,10 @@ window.onload = function()
 	}
 	if(js_str && js_str != '')
 	{
-		var js_obj = document.createElement('script');
+		/*var js_obj = document.createElement('script');
 		js_obj.setAttribute('type', 'text/javascript');
 		js_obj.appendChild(document.createTextNode(js_str));
-		document.head.appendChild(js_obj);
+		document.head.appendChild(js_obj);*/
 		$('js_TxId').value = js_str;
 	}
 }
